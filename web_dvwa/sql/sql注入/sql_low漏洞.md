@@ -48,7 +48,7 @@
 1 and 1 = 1 
 ```
 
-![](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\img\image-20240913164059882.png)
+![](./img/image-20240913163747050.png)
 
 ```sql
 1 and 1=2

